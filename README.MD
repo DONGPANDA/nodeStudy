@@ -1,5 +1,3 @@
-# nodeStudy
-
 ## git
 - 分布式 可以管理代码，合并代码
 - svn集中式  速度慢，不停的备份
@@ -8,7 +6,7 @@
 https://git-scm.com/downloads
 git安装选择在window下使用git并且在window下使用linux命令
 
-## mac下
+## mac下 
 - 增加mac下的命令窗口 oh-my-zsh item2
 
 ## cd  changeDirectory
@@ -34,56 +32,70 @@ rm -rf .git
 
 
 ## mkdir创建目录
+```
+mkdir index 创建一个index文件夹
+```
 
 ## touch 创建文件
 可以创建以.开头的文件
+```
+touch test.txt
+```
 
 ## cat 查看文件
+```
+cat test.txt 查看文件内容
+```
+
 
 ## vi
-- i 插入
-- ESC+:wq! 保存退出
-
-## 增加暂存区
 ```
-git add
-```
+vi test.txt
+i 插入,可以修改
+ESC+:wq! 保存退出  
 
-> 在工作区的文件都是红色的,添加到暂存区的是绿色的
-
-## 添加到历史区
-```
-git commit -m 'xxx'
 ```
 
-## 查看状态
+## 增加暂存区  
 ```
-git status
+git add test.txt 加.是添加所有可以添加的
 ```
 
-## 查看提交日志
+> 在工作区的文件都是红色的,添加到暂存区的是绿色的  
+
+## 添加到历史区  
+```
+git commit -m 'xxx'  
+```
+
+## 查看状态  
+```
+git status  
+```
+
+## 查看提交日志  
 ```
 git log
 ```
 
-## git diff
+## git diff  
 ```
 git diff 查看工作区和暂存区的diff
 git diff --cached 查看暂存区和历史区的diff
-git diff master 查看工作区和历史区的diff
+git diff master 查看工作区和历史区的diff  
 ```
 
-## 移除本次操作
+## 移除本次操作  
 ```
-git reset HEAD 文件名 从暂存区撤回
-git checkout  文件名 在工作区撤回上一次操作(修改,删除等,文件删除也可以撤回)
+git reset HEAD 文件名 从暂存区撤回  
+git checkout  文件名 在工作区撤回上一次操作(修改,删除等,文件删除也可以撤回)  
 ```
 
 ## 回滚,将工作区暂存区历史区用同一个版本全部覆盖掉
 ```
-git reset --hard 版本号
-跳到过去看未来git reflog
-```
+git reset --hard 版本号  
+跳到过去看未来git reflog  
+```  
 
 ## 分支管理
 ```
@@ -98,20 +110,20 @@ git checkout -b 名字 创建并切换到分支
 ## 合并分支
 ```
 在master上 git merge dev 快速转向
-```
+```  
 
 ## 提交
 ```
 git commit -a -m'信息' 支持提交过一次的文件
 ```
 
-> 产生冲突需要手动解决冲突,删掉不需要的内容然后再次提交,就是说如果两个分支都对同一文件进行了修改并提交,在合并时就会冲突 (conflict)
+> 产生冲突需要手动解决冲突,删掉不需要的内容然后再次提交,就是说如果两个分支都对同一文件进行了修改并提交,在合并时就会冲突 (conflict)  
 
-## 提交到远程仓库
-- git init
+## 提交到远程仓库  
+- git init 
 - touch .gitignore写上忽略内容
 - 创建所需要提交的文件(空文件夹会被忽略,可以加一个隐藏文件.gitkeep)
-- 提交到暂存历史区
+- 提交到暂存历史区  
 
 ## 链接远程仓库
 ```
@@ -119,3 +131,22 @@ git remote add origin 地址
 origin随便写(代表地址),但是想修改可以在重新执行,然后使用 git remote rm 名字删掉之前的
 git remote -v查看关联仓库
 ```
+
+## 发布github静态页  
+- 必须有一个固定的分支(gh-pages)
+- 需要将内容发送到分支上
+- 在setting中可以免费送你一个网址
+- git checkout -b gh-pages
+- touch index.html
+- git add .
+- git commit -m'addhtml'
+- git push origin gh-pages  
+
+## 克隆 
+```
+git clone 地址
+git pull origin master 可以不停的去更新
+```  
+## fork 
+把别人的代码copy一份变成自己的 别人更新代码 这边复制下来的不受影响 
+可以修改以后 可以new pull request请求合并
