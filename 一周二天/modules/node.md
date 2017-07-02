@@ -9,5 +9,10 @@
 - 如何引用一个模块(require())
 
 require exports module 这些都是文件外面闭包的形参
-(function(){})(exports,module,require,__dirname,__filename);
+(function(exports,module,require,__dirname,__filename){})();
 这五个参数也叫全局对象
+
+## 模块分类
+- 文件模块 
+- 第三方模块 
+- 内置模块(核心模块) node自带
