@@ -62,5 +62,4 @@ yarn remove xxx --dev
 
 ## 安装依赖yarn install
 
-
 > npm node package manager 管理node包(很多js文件)的,安装node自带npm
