@@ -1,18 +1,12 @@
 {
-  "name": "4npm",
+  "name": "my-pack-d",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "stylus": "^0.54.5"
-  },
-  "dependencies": {
-    "less": "^2.7.2",
-    "my-pack-d": "^1.0.0"
-  }
+  "license": "ISC"
 }
