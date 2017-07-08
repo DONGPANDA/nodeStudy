@@ -31,3 +31,7 @@ function out() {//判断对象里有几项,对象转化为数组
     }
 }
 
+//promise 承诺 成功 resolve 失败 reject
+
+
+
