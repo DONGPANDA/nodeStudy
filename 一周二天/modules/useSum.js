@@ -3,3 +3,4 @@
  */
 let total=require('./sum');
 console.log(total(1, 4, 6, 7, 8, 9));
+console.log(global);

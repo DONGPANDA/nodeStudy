@@ -22,10 +22,10 @@ setTimeout(function () {
 //在命令行下可以用node加文件名执行
 
 //2.setTimeout  异步 (事件环,node 是事件环) 两个小本本 第一个小本本同步事件 第二个小本本异步
-/*console.log(this);
+console.log(this);
 setTimeout((data,a)=>{
-    console.log(this);
-},1000,"你好","啊");*///setTimeout可以传参数,这里的this默认指向setTimeout自己
+    console.log(this===module.exports);
+},1000,"你好","啊");//setTimeout可以传参数,这里的this默认指向setTimeout自己
 //使用箭头函数的话,this指向{} 一个空对象
 //全局下this不是global,是个空对象
 

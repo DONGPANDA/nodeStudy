@@ -11,7 +11,7 @@ let obj={
     }
 }
 exports.obj=obj;
-
+console.log(exports.obj);
 /*
 let a="b";
 let obj={
