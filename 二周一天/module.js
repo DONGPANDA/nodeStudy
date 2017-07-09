@@ -26,5 +26,5 @@ Util.inherits(Girl,Person)
 console.log(Girl.drink);
 //console.log(Util.isArray({}));//false
 //基本数据类型:string boolean null undefined symbol Object
-//console.log(Util);
+console.log(Util);
 

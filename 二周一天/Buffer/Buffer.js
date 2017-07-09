@@ -48,8 +48,8 @@ var buf2=new Buffer('给我');
 var buf3=new Buffer('发小');
 var buf4=new Buffer('视频');
 
-//console.log(Buffer.concat([buf1, buf2, buf3, buf4]).toString());
-
+console.log(Buffer.concat([buf1, buf2, buf3, buf4],6).toString());
+//Buffer.concat(list,位数)
 //模拟一个myConcat
     //1.先判断是否传入totalLength,如果没有,计算总长
     //2.创建一个新buffer
@@ -70,4 +70,4 @@ Buffer.myConcat=function (list,totalLength) {
     return buffer.slice(0,index)
 }
 
-console.log(Buffer.myConcat([buf1, buf2, buf3, buf4]));
+console.log(Buffer.myConcat([buf1, buf2, buf3, buf4]).toString());

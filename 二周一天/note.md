@@ -8,7 +8,7 @@ Child.prototype=new Futher()
 
 ```javascript
 function Child(name,age) {
-  Futher.call(this,age)
+  Futher.call(this,name,age)
   this.age=age
 }
 ```

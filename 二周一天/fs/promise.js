@@ -35,9 +35,16 @@ function readN(url) {
         })
     })
 }
-readN('name.txt').then(data=>{
+/*readN('name.txt').then(data=>{
     school.name=data
     console.log(school);
 }).catch(err=>{
     console.log(err);
+})*/
+//在all中都成功才成功,有一个失败就失败
+Promise.all([readN('name.txt'),readN('age.txt')]).then(function ([name,age]) {
+        let school={
+            name,age
+        }
+    console.log(school);
 })
