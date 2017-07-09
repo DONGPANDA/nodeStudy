@@ -48,3 +48,6 @@ Promise.all([readN('name.txt'),readN('age.txt')]).then(function ([name,age]) {
         }
     console.log(school);
 })
+
+//虽然改写成了异步,但是仍然解决不了大文件读写的问题,会淹没内存,希望的是边读边写,流帮我们解决边读边写,gulp基于流
+
