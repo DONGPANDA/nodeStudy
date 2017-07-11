@@ -15,8 +15,24 @@ npm install babel-core babel-loader --save-dev
 npm install babel-preset-es2015 --save-dev
 ```
 
-##webpack 服务
+##webpack 服务 在内存中打包,可以拿到最新的改动
 ```$xslt
 npm install webpack-dev-server --save-dev
 ```
 ## html-webpack-plugin插件
+
+## 解析图片 url-loader file-loader
+
+## vue-cli可以帮我们生成项目
+```$xslt
+vue init simple 项目名
+vue init webpack-simple 项目名
+vue init 项目名
+```  
+
+## vue有两部分组成
+- runtime
+- compiler
+
+runtime+compiler 即支持render也支持template
+runtime-only 只支持render

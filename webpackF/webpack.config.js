@@ -27,6 +27,10 @@ module.exports = {
             {
                 test:/\.less$/,
                 use:['style-loader','css-loader','less-loader']
+            },
+            {
+                test:/\.(jpg|png|gif|jpeg)$/,
+                use: 'url-loader?limit=8192',//url-loader需要file-loader,limit 8k以下文件转化为base64
             }
         ]
     },
