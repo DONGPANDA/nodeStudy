@@ -14,5 +14,5 @@ copy('name.txt','1.txt')
 
 //path 内置模块 resolve join
 let path=require('path')
-console.log(path.resolve('dist'));//给相对,返回绝对 C:\Users\96004\nodeStudy\二周三天\dist
-console.log(path.join(__dirname, 'dist'));//__dirname当前目录的路径 C:\Users\96004\nodeStudy\二周三天\dist
+console.log(path.resolve('dist'));//给相对,返回绝对 C:\Users\96004\nodeStudy\2week3day\dist
+console.log(path.join(__dirname, 'dist'));//__dirname当前目录的路径 C:\Users\96004\nodeStudy\2week3day\dist
