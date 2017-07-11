@@ -36,3 +36,9 @@ vue init 项目名
 
 runtime+compiler 即支持render也支持template
 runtime-only 只支持render
+
+render方法可以将对象渲染成真实dom
+app组件中自带render 直接结构即可
+App是根组件
+
+router文件夹下index.js 导入时可以不写
