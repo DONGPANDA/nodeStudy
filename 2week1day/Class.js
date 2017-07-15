@@ -40,6 +40,7 @@ class Girl extends Person{
         this.age=age
     }
 }
+
 let girl=new Girl('llala',2)
 console.log(girl.age);
 console.log(girl.name);

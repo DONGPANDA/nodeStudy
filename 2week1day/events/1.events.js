@@ -60,6 +60,7 @@ Man.prototype.once=function (eventName,callback) {
 }
 Man.prototype.emit=function (eventName,...arr) {
     if(this._events[eventName]){
+        console.log(this);
         this._events[eventName].forEach(item=>item.call(this,...arr))
     }
 }
@@ -76,6 +77,7 @@ function buyCar(h1,h2) {
     console.log('buy car'+h1+h2);
 }
 function buyPack(h1,h2) {
+    console.log(this);
     console.log('buy pack'+h1+h2);
 }
 man.on('money',buyCar);
