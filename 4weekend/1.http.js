@@ -8,7 +8,7 @@ http.createServer(function (req,res) {
     let method=req.method;
     let url=req.url;
     if(method==='GET'&&url==='/signup'){
-        //告诉卢兰其我的内容类型是html格式,文件编码是utf-8
+        //告诉浏览器我的内容类型是html格式,文件编码是utf-8
         res.setHeader('Content-Type','text/html;charset=utf-8')
         res.end('注册')
     }else if(method==='GET'&&url==='/signin'){

@@ -5,7 +5,7 @@ let express=require('express');
 let app=express();
 //使用中间件函数
 //没有路径则意味着可以匹配所有路径
-//没有方法,以为可以匹配所有方法
+//没有方法,意味可以匹配所有方法
 app.use(function (req,res,next) {
     //next是一个函数,调用它的话可以使请求向下继续执行
     next();
