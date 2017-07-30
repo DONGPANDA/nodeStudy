@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chatting room</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+    <style>
+        .name{
+            font-weight: bold;
+            color: deeppink;
+            cursor: pointer;
+        }
+        .content{
+            color: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="text-center">聊天室</h3>
+                    <button @click="join('green')" class="room btn btn-default">守望先锋</button>
+                    <button @click="join('red')" class="room btn btn-default">绝地逃生</button>
+                </div>
+                <div class="panel-body">
+                    <ul onclick="chat(event)" class="list-group">
+                    </ul>
+                </div>
+                <div class="panel-footer">
+                    <form class="form-horizontal" onsubmit="send(event)">
+                        <div class="form-group row">
+                            <div class="col-md-10">
+                                <input autocomplete="off" id="msg" type="text" class="form-control">
+                            </div>
+                            <div class="col-md-2">
+                                <input type="submit" class="btn btn-primary">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    let msg=document.querySelector("#msg");
+    let msgUl=document.querySelector(".list-group");
+    let socket = io();
+    socket.emit('getAllMessages');
+    socket.on('message', function (msgObj) {
+        let li=document.createElement('li');
+        li.innerHTML=formatUser(msgObj);
+        li.className='list-group-item';
+        msgUl.appendChild(li);
+    })
+    socket.on('allMessages',function (msg) {
+        msgUl.innerHTML=msg.map(item=>(
+            `<li class="list-group-item">${formatUser(item)}</li>`
+        )).join('')
+    })
+    socket.on('joined',function (room) {
+
+    })
+    function send(event) {
+        event.preventDefault();
+        let msgVal=msg.value;
+        socket.send(msgVal);
+        msg.value='';
+    }
+    function chat(event) {
+        if(event.target.className=='name'){
+            msg.value=`@${event.target.innerHTML} `
+            msg.focus()
+        }
+    }
+    function formatUser(msgObj) {
+        return `<span class="name">${msgObj.author}</span>:<span class="content">${msgObj.content}</span><span class="pull-right">${new Date(msgObj.createAt).toLocaleString()}</span>`
+    }
+    function join(room) {
+        socket.emit('join',room)
+    }
+</script>
+</body>
+</html>

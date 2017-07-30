@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine','html');
 app.set('views',path.resolve('views'))
 app.engine('.html',require('ejs').__express)
-let user=require('./routes/user')
+let user=require('./routes/user1')
 //user是一个变量,指向模块的导出对象,如果请求路径是以/user开头,会交由user中间件进行处理
 /*app.get('/bootstrap/dist/css/bootstrap.css',function (req,res) {
     //把一个路径里的文件读出来发送给客户端

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="clock"></div>
+<script>
+    //轮询,浏览器周期性的向服务器发送请求,获得响应
+    setInterval(()=>{
+        let xhr=new XMLHttpRequest();
+        xhr.open('GET','http://localhost:3000/clock',true);//是否异步,如果同步(false)在服务器没有返回数据之前不能进行后续操作
+        xhr.onreadystatechange=function () {
+            if(xhr.readyState==4&&xhr.status==200){
+                document.querySelector("#clock").innerHTML=xhr.responseText;
+            }
+        }
+        xhr.send();
+    },1000)
+</script>
+</body>
+</html>

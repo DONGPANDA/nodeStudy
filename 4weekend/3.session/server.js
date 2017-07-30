@@ -8,7 +8,7 @@ app.use(session({
     resave:true,
     saveUninitialized:true,
     secret:'dong'
-}))
+}));
 app.get('/write',function (req,res) {
     //每次使用了session中间件之后,会在请求req上多一个session属性
     req.session.name='dong';

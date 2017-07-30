@@ -7,9 +7,9 @@ http.createServer(function (req,res) {
     let url=req.url;
     if(url=='/write'){
         let cookie=req.headers.cookie;
-        let num=parseInt(queryString.parse(cookie,'; ').sum)
         let count=1
         if(cookie){
+            let num=parseInt(queryString.parse(cookie,'; ').sum)
             count=num+1
         }
         res.setHeader('Content-Type','text/html;charset=utf-8')
